@@ -5,10 +5,10 @@ DEBUG
 
 
 import pygame
-from pychess import ChessGameState
-from pychess import ChessMove
-from pychess import ChessGraphics
-from pychess import ChessValidMoves
+import ChessGameState
+import ChessMove
+import ChessGraphics
+import ChessValidMoves
 
 WIDTH = HEIGHT = 512
 DIMENSION = 8

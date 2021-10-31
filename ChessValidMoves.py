@@ -1,5 +1,5 @@
-from pychess import ChessMove
-from pychess import ChessCastleRights
+import ChessMove
+import ChessCastleRights
 
 
 class ValidMoves:

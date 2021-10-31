@@ -2,8 +2,8 @@ import pygame
 
 ANIMATION_FPS = 60
 
-class Animations:
 
+class Animations:
     def __init__(self, move, frame_count, sq_size):
         self.colors = []
         self.start_row = move.start_row
