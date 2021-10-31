@@ -1,14 +1,14 @@
 
-import ChessMove
-import ChessCastleRights
+import move
+import castlerights
 
 
 class GameState:
 
-    castle_rights = ChessCastleRights.CastleRights
+    castle_rights = castlerights.CastleRights
 
     def __init__(self):
-        self.move_class = ChessMove.Move
+        self.move_class = move.Move
         self.board = [
             ["bR", "bN", "bB", "bQ", "bK", "bB", "bN", "bR"],
             ["bP", "bP", "bP", "bP", "bP", "bP", "bP", "bP"],

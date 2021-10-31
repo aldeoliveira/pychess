@@ -1,11 +1,11 @@
-import ChessMove
-import ChessCastleRights
+import move
+import castlerights
 
 
 class ValidMoves:
 
-    move_class = ChessMove.Move
-    castle_rights = ChessCastleRights.CastleRights
+    move_class = move.Move
+    castle_rights = castlerights.CastleRights
 
     def __init__(self, current_gamestate):
         self.board = current_gamestate.board

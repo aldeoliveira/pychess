@@ -5,10 +5,10 @@ DEBUG
 
 
 import pygame
-import ChessGameState
-import ChessMove
-import ChessGraphics
-import ChessValidMoves
+import gamestate
+import move
+import graphics
+import validmoves
 
 WIDTH = HEIGHT = 512
 DIMENSION = 8
@@ -54,14 +54,14 @@ class ChessMain:
             pygame.display.flip()
 
     def load_images(self):
-        self.graphic_resources = ChessGraphics.Graphics()
+        self.graphic_resources = graphics.Graphics()
         self.graphic_resources.load_images()
 
     def set_new_game(self):
         """
         Reseta os atributos para uma nova partida.
         """
-        self.current_gamestate = ChessGameState.GameState()
+        self.current_gamestate = gamestate.GameState()
         self.get_valid_moves_for_current_position()
 
         self.game_over = False
@@ -70,7 +70,7 @@ class ChessMain:
         self.running = True
 
     def get_valid_moves_for_current_position(self):
-        self.valid_moves_class = ChessValidMoves.ValidMoves(self.current_gamestate)
+        self.valid_moves_class = validmoves.ValidMoves(self.current_gamestate)
         self.valid_moves_for_current_position = self.valid_moves_class.get_valid_moves()
 
     def event_controls(self):
@@ -99,7 +99,7 @@ class ChessMain:
             self.last_square_clicked = (row, col)
             self.pair_of_clicks.append(self.last_square_clicked)
         if len(self.pair_of_clicks) == 2:
-            move = ChessMove.Move(self.pair_of_clicks[0], self.pair_of_clicks[1], self.current_gamestate.board)
+            move = move.Move(self.pair_of_clicks[0], self.pair_of_clicks[1], self.current_gamestate.board)
             valid_move_chosen = self.check_if_move_is_valid(move)
             if valid_move_chosen:
                 self.execute_move(valid_move_chosen)
