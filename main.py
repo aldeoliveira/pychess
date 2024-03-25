@@ -6,9 +6,9 @@ DEBUG
 
 import pygame
 import gamestate
-import move
 import graphics
 import validmoves
+from move import Move
 
 WIDTH = HEIGHT = 512
 DIMENSION = 8
@@ -99,7 +99,7 @@ class ChessMain:
             self.last_square_clicked = (row, col)
             self.pair_of_clicks.append(self.last_square_clicked)
         if len(self.pair_of_clicks) == 2:
-            move = move.Move(self.pair_of_clicks[0], self.pair_of_clicks[1], self.current_gamestate.board)
+            move = Move(self.pair_of_clicks[0], self.pair_of_clicks[1], self.current_gamestate.board)
             valid_move_chosen = self.check_if_move_is_valid(move)
             if valid_move_chosen:
                 self.execute_move(valid_move_chosen)
